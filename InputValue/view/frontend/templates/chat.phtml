@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var \ChatGpt\InputValue\Block\Chat $block
+ */
+?>
+<div class="container-greeting">
+    <h2><?= $block->getGreeting()?></h2>
+</div>
+<div class="container-input-value" id="input-value" data-bind="scope:'input_value'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#input-value": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "input_value": {
+                        "component": "ChatGpt_InputValue/js/input_value",
+                        "template": "ChatGpt_InputValue/input_value"
+                    }
+                }
+            }
+        }
+    }
+</script>
