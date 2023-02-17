@@ -1,28 +1,23 @@
 define([
-    'jquery', 
-    'uiComponent', 
+    'jquery',
+    'uiComponent',
     'ko'
 ], function ($, Component, ko) {
     'use strict';
 
     return Component.extend({
         defaults: {
-            template: 'Chat_InputValue/input_value'
+            template: 'ChatGpt_InputValue/input_value'
         },
         inputValue: ko.observable(''),
-        displayValue: ko.computed(function() {
-            return 'El valor ingresado es: ' + this.inputValue();
-        }),
+        displayValue: ko.observable(''),
 
-        getInputValue: function() {
-            this.inputValue($('#input_component').val());
+        getInputValue: function () {
+            this.displayValue('El valor ingresado es: ' + this.inputValue());
         },
 
         initialize: function () {
             this._super();
-            var input = $('#input_component');
-            input.change(this.getInputValue.bind(this));
-            ko.applyBindings(this, input[0]);
         }
     });
 });
