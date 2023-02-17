@@ -1,6 +1,6 @@
 <div class="inputvalue-wrapper">
     <label for="input_component" class="inputvalue-label">Ingrese un valor:</label>
-    <input id="input_component" class="inputvalue-input" type="text" data-bind="value: inputValue, change: getInputValue" />
+     <input type="text" id="input_component" data-bind="value: inputValue, event: { change: getInputValue }">
     <br />
     <span data-bind="text: displayValue"></span>
 </div>
