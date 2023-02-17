@@ -17,18 +17,17 @@ define([
 
         initialize: function () {
             this._super();
-            this.getInputValue();
-            return this;
+            var input = $('#input_component');
+            input.change(this.getInputValue());
+            ko.applyBindings(this, input[0]);
         },
 
         getInputValue: function() {
             this.inputValue($('#input_component').val());
-        },
-
-        initObservable: function () {
-            this._super();
-            this.observe('inputValue', 'displayValue');
-            return this;
+            var self = this;
+            return function () {
+                self.inputValue(this.value);
+            };
         },
     });
 });
