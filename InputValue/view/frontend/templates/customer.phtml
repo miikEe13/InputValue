@@ -1,0 +1,16 @@
+<div id="custom-component" data-bind="scope:'cutomer_list'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+{
+    "#custom-component": {
+        "Magento_Ui/js/core/app": {
+           "components": {
+                "cutomer_list": {
+                    "component": "ChatGpt_InputValue/js/customer"
+                }
+            }
+        }
+    }
+}
+</script>

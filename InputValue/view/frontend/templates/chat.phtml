@@ -6,7 +6,7 @@
 <div class="container-greeting">
     <h2><?= $block->getGreeting()?></h2>
 </div>
-<div class="container-input-value" id="input-value" data-bind="scope:'input_value'">
+<div class="container-input-value" id="input-value" data-bind="scope:'ko_input'">
     <!-- ko template: getTemplate() --><!-- /ko -->
 </div>
 <script type="text/x-magento-init">
@@ -14,7 +14,7 @@
         "*": {
             "Magento_Ui/js/core/app": {
                "components": {
-                    "input_value": {
+                    "ko_input": {
                         "component": "ChatGpt_InputValue/js/input_value",
                         "template": "ChatGpt_InputValue/input_value"
                     }
